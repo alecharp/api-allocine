@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>super-pom</artifactId>
+		<groupId>org.lecharpentier.pom</groupId>
+		<version>1.1</version>
+	</parent>
+	<groupId>org.lecharpentier.api</groupId>
+	<artifactId>allocine-api</artifactId>
+	<version>1.1.0-SNAPSHOT</version>
+	<name>API Allocine</name>
+	<description>Enable to take advantages of Allocine API with a Java engine</description>
+
+	<licenses>
+		<license>
+			<name>GPL</name>
+			<url>http://www.gnu.org/copyleft/gpl.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:https://github.com/alecharp/api-allocine</connection>
+		<developerConnection>scm:git:https://github.com/alecharp/api-allocine</developerConnection>
+	</scm>
+
+	<ciManagement>
+		<system>jenkins</system>
+		<url>http://ci.lecharpentier.org/job/api-allocine</url>
+	</ciManagement>
+
+	<properties>
+		<classpath-prefix>/</classpath-prefix>
+	</properties>
+
+	<developers>
+		<developer>
+			<id>alecharp</id>
+			<name>Adrien Lecharpentier</name>
+			<email>adrien@lecharpentier.org</email>
+		</developer>
+	</developers>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<releaseProfiles>archive</releaseProfiles>
+					<goals>deploy</goals>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>archive</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-assembly-plugin</artifactId>
+						<version>2.2</version>
+						<executions>
+							<execution>
+								<id>make-assembly</id>
+								<phase>package</phase>
+								<goals>
+									<goal>assembly</goal>
+								</goals>
+								<configuration>
+									<descriptors>
+										<descriptor>src/assemble/descriptor.xml</descriptor>
+									</descriptors>
+									<finalName>${project.name}-${project.version}</finalName>
+									<appendAssemblyId>false</appendAssemblyId>
+									<outputDirectory>target/</outputDirectory>
+									<workDirectory>target/assembly/work</workDirectory>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

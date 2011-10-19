@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<movie code="29240" xmlns="http://www.allocine.net/v6/ns/">
+	<movieType code="4002">Long-métrage</movieType>
+	<originalTitle>X2</originalTitle>
+	<title>X-Men 2</title>
+	<keywords>X-Men 2 xmen x2 x men 2 </keywords>
+	<productionYear>2003</productionYear>
+	<nationality jsonListItem="1" code="5002">U.S.A.</nationality>
+	<genre jsonListItem="1" code="13021">Science fiction</genre>
+	<genre jsonListItem="1" code="13025">Action</genre>
+	<genre jsonListItem="1" code="13012">Fantastique</genre>
+	<release>
+		<releaseDate>2003-04-30</releaseDate>
+		<country code="5001">France</country>
+		<releaseState code="3004">Sorti en salle</releaseState>
+		<distributor code="50" name="UFD"></distributor>
+	</release>
+	<runtime>7500</runtime>
+	<synopsis>Toujours considérés comme des monstres par une société qui
+		les rejette, les mutants sont une nouvelle fois au centre des débats
+		alors qu'un crime effroyable commis par l'un d'eux relance la
+		polémique autour de l'Acte d'Enregistrement des Mutants et le
+		mouvement anti-mutants, dirigé par l'ancien militaire William Stryker.
+		Quand ce dernier lance une attaque contre l'école de mutants du
+		Professeur Charles Xavier, les X-Men se préparent à une guerre sans
+		merci pour leur survie, aidés de Magnéto, récemment évadé de sa
+		cellule de plastique. Parallèlement, Wolverine enquête sur son
+		mystérieux passé, auquel Stryker, dont on dit qu'il a mené de
+		nombreuses expériences sur les mutants, ne serait pas étranger...
+	</synopsis>
+	<synopsisShort>Les mutants font face à une nouvelle menace : alors que
+		la polémique fait rage autour d'un meurtre commis par l'un d'eux, le
+		mouvement anti-mutants lance une attaque contre leur école. Magnéto se
+		joint aux X-Men dans ce combat pour leur survie...</synopsisShort>
+	<castingShort>
+		<directors>Bryan Singer</directors>
+		<actors>Patrick Stewart, Hugh Jackman, Ian McKellen, Halle Berry,
+			Famke Janssen</actors>
+	</castingShort>
+	<castMember jsonListItem="1">
+		<person code="22165">Bryan Singer</person>
+		<activity code="8002">Réalisateur</activity>
+		<picture
+			href="http://images.allocine.fr/medias/nmedia/18/35/42/00/19047813.jpg"></picture>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="11461">Patrick Stewart</person>
+		<activity code="8001">Acteur</activity>
+		<role>le professeur X (le professeur Charles Francis Xavier)</role>
+		<picture
+			href="http://images.allocine.fr/medias/nmedia/18/35/42/66/18606025.jpg"></picture>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="33385">Hugh Jackman</person>
+		<activity code="8001">Acteur</activity>
+		<role>Wolverine (Logan) </role>
+		<picture
+			href="http://images.allocine.fr/medias/nmedia/18/35/26/59/19015141.jpg"></picture>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="5653">Ian McKellen</person>
+		<activity code="8001">Acteur</activity>
+		<role>Magneto (Erik Magnus Lehnsherr)</role>
+		<picture
+			href="http://images.allocine.fr/medias/nmedia/18/35/25/08/18605970.jpg"></picture>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="59857">Stan Lee</person>
+		<activity code="8062">Producteur exécutif</activity>
+		<picture
+			href="http://images.allocine.fr/medias/nmedia/18/64/53/98/18790605.jpg"></picture>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="41474">Lauren Shuler Donner</person>
+		<activity code="8029">Productrice</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="41436">Ralph Winter</person>
+		<activity code="8029">Producteur</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="73151">Avi Arad</person>
+		<activity code="8062">Producteur exécutif</activity>
+		<picture href="http://images.allocine.fr/medias/nmedia/18/35/07/63/avi.jpg"></picture>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="73150">Tom DeSanto</person>
+		<activity code="8062">Producteur exécutif</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="22165">Bryan Singer</person>
+		<activity code="8062">Producteur exécutif</activity>
+		<picture
+			href="http://images.allocine.fr/medias/nmedia/18/35/42/00/19047813.jpg"></picture>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="90245">Ross Fanger</person>
+		<activity code="8063">Coproducteur</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="73152">Kevin Feige</person>
+		<activity code="8064">Producteur associé</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="90247">David Gorder</person>
+		<activity code="8064">Producteur associé</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="90242">Michael Dougherty</person>
+		<activity code="8004">Scénariste</activity>
+		<picture
+			href="http://images.allocine.fr/medias/nmedia/18/62/80/64/18652080.jpg"></picture>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="90243">Dan Harris</person>
+		<activity code="8004">Scénariste</activity>
+		<picture
+			href="http://images.allocine.fr/medias/nmedia/18/62/80/46/18651983.jpg"></picture>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="69614">David Hayter</person>
+		<activity code="8004">Scénariste</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="62670">Zak Penn</person>
+		<activity code="8004">Scénariste</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="22165">Bryan Singer</person>
+		<activity code="8004">Scénariste</activity>
+		<picture
+			href="http://images.allocine.fr/medias/nmedia/18/35/42/00/19047813.jpg"></picture>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="184998">Michael Vezina</person>
+		<activity code="8048">Effets spéciaux</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="64373">Roger Mussenden</person>
+		<activity code="8041">Directeur du casting</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="47781">Newton Thomas Sigel</person>
+		<activity code="8037">Directeur de la photographie</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="90244">Guy Hendrix Dyas</person>
+		<activity code="8059">Chef décorateur</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="34226">John Ottman</person>
+		<activity code="8046">Monteur</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="83803">Michael L. Fink</person>
+		<activity code="8060">Superviseur des effets visuels</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="83886">Gordon Smith</person>
+		<activity code="8040">Maquilleur</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="74021">Louise Mingenbach</person>
+		<activity code="8039">Costumière</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="83800">Lee Cleary</person>
+		<activity code="8032">1er assistant réalisateur</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="83805">Gary Jensen</person>
+		<activity code="8051">Cascadeur</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="90246">Jacob Rupp</person>
+		<activity code="8051">Cascadeur</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="60602">Melissa Stubbs</person>
+		<activity code="8051">Cascadeur</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="40344">Ernie Jackson</person>
+		<activity code="8051">Cascadeur</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="61955">Geoff Hubbard</person>
+		<activity code="8042">Directeur artistique</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="72007">Helen Jarvis</person>
+		<activity code="8042">Directeur artistique</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="90248">Jose Fernandez</person>
+		<activity code="8039">Costumier</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="90249">Brian Smrz</person>
+		<activity code="8076">Réalisateur de 2nd équipe</activity>
+	</castMember>
+	<castMember jsonListItem="1">
+		<person code="34226">John Ottman</person>
+		<activity code="8003">Compositeur</activity>
+	</castMember>
+	<poster
+		href="http://images.allocine.fr/medias/nmedia/18/35/06/08/affiche.jpg"></poster>
+	<trailer code="18350995" href="http://www.allocine.fr/blogvision/18350995"></trailer>
+	<link jsonListItem="1" rel="aco:more"
+		href="http://www.allocine.fr/film/fichefilm_gen_cfilm=29240.html" />
+	<statistics>
+		<pressRating>4</pressRating>
+		<pressReviewCount>13</pressReviewCount>
+		<userRating>4</userRating>
+		<userReviewCount>617</userReviewCount>
+		<userNoteCount>17452</userNoteCount>
+		<commentCount>18</commentCount>
+		<ratingStats>
+			<rating note="5.0">252</rating>
+			<rating note="4.5">12</rating>
+			<rating note="4.0">195</rating>
+			<rating note="3.5">9</rating>
+			<rating note="3.0">27</rating>
+			<rating note="2.5">68</rating>
+			<rating note="2.0">4</rating>
+			<rating note="1.5">2</rating>
+			<rating note="1.0">38</rating>
+			<rating note="0.5">10</rating>
+		</ratingStats>
+		<fanCount>1843</fanCount>
+		<releaseWeekPosition>-413</releaseWeekPosition>
+	</statistics>
+</movie>
