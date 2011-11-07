@@ -62,6 +62,8 @@ public class TestAllocineParserDetailsXML extends TestCase {
 		try {
 			ase.details(13665);
 			ase.details(61286);
+            MovieDetails md = ase.details(4327);
+            //System.out.println(md.getTitle() + ", " + md.getActors() + ", " + md.getDirectors());
 		} catch (IOException e) {
 			fail(e.getMessage());
 		}

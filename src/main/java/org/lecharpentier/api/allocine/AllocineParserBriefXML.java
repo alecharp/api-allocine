@@ -122,7 +122,12 @@ class BriefHandler extends DefaultHandler {
 			mbf.setReleaseDate(sb.toString());
 		}
 		if (AllocineConstants.PERSON.equals(qName)) {
-			pf.parseString(sb.toString());
+			try {
+                pf.parseString(sb.toString());
+            } catch (IllegalStateException e) {
+                logger.log(Level.WARNING, "Error while parsing a person name");
+                logger.log(Level.FINER, "" + e);
+            }
 		}
 		if (AllocineConstants.PRESS_RATING.equals(qName)) {
 			try {

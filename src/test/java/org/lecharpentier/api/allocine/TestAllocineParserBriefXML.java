@@ -53,9 +53,23 @@ public class TestAllocineParserBriefXML extends TestCase {
 	public void testXMLParserWithOnlineResources() {
 		AllocineSearchEngine ase = new AllocineSearchEngine();
 		try {
-			ase.search("goldeneye");
+			for(MovieBrief mb : ase.search("goldeneye")) {
+                //System.out.println(mb.getTitle() + ", " + mb.getActors() + ", " + mb.getDirectors());
+            }
 		} catch (IOException e) {
 			fail(e.getMessage());
 		}
 	}
+
+    @Test
+    public void testIssue4() {
+        AllocineSearchEngine ase = new AllocineSearchEngine();
+        try {
+			for(MovieBrief mb : ase.search("les tontons flingueurs")) {
+                //System.out.println(mb.getTitle() + ", " + mb.getActors() + ", " + mb.getDirectors());
+            }
+		} catch (IOException e) {
+			fail(e.getMessage());
+		}
+    }
 }
