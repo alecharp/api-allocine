@@ -95,7 +95,7 @@ public class AllocineSearchEngine extends AllocineSearch {
 
 	private String readURLContent(String url) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(url).openStream(),
-				Charset.forName("ISO-8859-1")));
+				Charset.forName("UTF-8")));
 		StringBuilder content = new StringBuilder();
 		String tmpLine;
 

@@ -100,7 +100,7 @@ public final class Person {
 		 *             the illegal state exception
 		 */
 		public void parseString(String value) {
-			Matcher m = Pattern.compile("^([\\w\\-\\. ]*) (.*)$").matcher(value);
+			Matcher m = Pattern.compile("^([\\p{Punct}\\p{Blank}\\p{javaLetterOrDigit}]*) (.*)$").matcher(value);
 			if (m.matches()) {
 				p.setName(m.group(2));
 				p.setFirstName(m.group(1));
