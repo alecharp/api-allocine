@@ -32,4 +32,6 @@ final class AllocineConstants {
 	static final String HREF = "href";
 	static final String PRESS_RATING = "pressRating";
 	static final String USER_RATING = "userRating";
+    static final String DIRECTORS_SHORT = "directors";
+    static final String ACTORS_SHORT = "actors";
 }

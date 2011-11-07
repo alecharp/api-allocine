@@ -121,14 +121,30 @@ class BriefHandler extends DefaultHandler {
 		if (AllocineConstants.RELEASE_DATE.equals(qName)) {
 			mbf.setReleaseDate(sb.toString());
 		}
-		if (AllocineConstants.PERSON.equals(qName)) {
-			try {
-                pf.parseString(sb.toString());
-            } catch (IllegalStateException e) {
-                logger.log(Level.WARNING, "Error while parsing a person name");
-                logger.log(Level.FINER, "" + e);
+        if(AllocineConstants.DIRECTORS_SHORT.equals(qName)) {
+            for(String s : sb.toString().split(",")) {
+                try {
+                    pf.create();
+                    pf.parseString(s.toString().trim());
+                    mbf.addDirector(pf.validate());
+                } catch (IllegalStateException e) {
+                    logger.log(Level.WARNING, "Error while parsing a person name");
+                    logger.log(Level.FINER, "" + e);
+                }
             }
-		}
+        }
+        if(AllocineConstants.ACTORS_SHORT.equals(qName)) {
+            for(String s : sb.toString().split(",")) {
+                try {
+                    pf.create();
+                    pf.parseString(s.toString().trim());
+                    mbf.addActor(pf.validate());
+                } catch (IllegalStateException e) {
+                    logger.log(Level.WARNING, "Error while parsing a person name");
+                    logger.log(Level.FINER, "" + e);
+                }
+            }
+        }
 		if (AllocineConstants.PRESS_RATING.equals(qName)) {
 			try {
 				mbf.setPressRating(Long.parseLong(sb.toString()));

@@ -66,7 +66,7 @@ public class TestAllocineParserBriefXML extends TestCase {
         AllocineSearchEngine ase = new AllocineSearchEngine();
         try {
 			for(MovieBrief mb : ase.search("les tontons flingueurs")) {
-                //System.out.println(mb.getTitle() + ", " + mb.getActors() + ", " + mb.getDirectors());
+                assertEquals(mb.getTitle(), "Les Tontons flingueurs");
             }
 		} catch (IOException e) {
 			fail(e.getMessage());

@@ -117,6 +117,8 @@ public final class MovieBrief implements Comparable<MovieBrief> {
 	 * @return the title
 	 */
 	public String getTitle() {
+        if(title==null || title.isEmpty())
+            return originalTitle;
 		return title;
 	}
 
