@@ -1,5 +1,7 @@
 package org.lecharpentier.api.allocine;
 
+import org.apache.log4j.Logger;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -7,8 +9,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * The Class MovieDetails.
@@ -267,7 +267,7 @@ public final class MovieDetails {
 	 * A factory for creating MovieDetails objects.
 	 */
 	public static class MovieDetailsFactory {
-		private final Logger logger = Logger.getAnonymousLogger();
+		private final Logger logger = Logger.getLogger(MovieDetailsFactory.class.getName());
 		private MovieDetails md;
 
 		/**
@@ -372,7 +372,7 @@ public final class MovieDetails {
 				Date d = sdf.parse(dateString);
 				md.setReleaseDate(d);
 			} catch (ParseException e) {
-				logger.log(Level.FINER, e.getMessage());
+				logger.warn(e);
 			}
 		}
 

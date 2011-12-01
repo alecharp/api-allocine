@@ -1,5 +1,6 @@
 package org.lecharpentier.api.allocine;
 
+import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -15,8 +16,6 @@ import org.xml.sax.helpers.DefaultHandler;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author Adrien Lecharpentier
@@ -53,7 +52,7 @@ class DetailsHandler extends DefaultHandler {
     private StringBuilder sb;
     private long activity;
 
-    private final Logger logger = Logger.getAnonymousLogger();
+    private final Logger logger = Logger.getLogger(DetailsHandler.class.getName());
 
     DetailsHandler(MovieDetailsFactory mdf) {
         this.mdf = mdf;
@@ -67,7 +66,7 @@ class DetailsHandler extends DefaultHandler {
             try {
                 mdf.setFilmCode(Long.parseLong(attributes.getValue(AllocineConstants.CODE)));
             } catch (NumberFormatException e) {
-                logger.log(Level.WARNING, "Error with film code");
+                logger.warn("Error with film code", e);
             }
         }
         if (AllocineConstants.PERSON.equals(qName)) {
@@ -75,7 +74,7 @@ class DetailsHandler extends DefaultHandler {
             try {
                 pf.setCode(Long.parseLong(attributes.getValue(AllocineConstants.CODE)));
             } catch (NumberFormatException e) {
-                logger.log(Level.WARNING, "Error with person code");
+                logger.warn("Error with person code", e);
             }
         }
         if (AllocineConstants.PICTURE.equals(qName)) {
@@ -86,7 +85,7 @@ class DetailsHandler extends DefaultHandler {
                 activity = Long.parseLong(attributes.getValue(AllocineConstants.CODE));
             } catch (NumberFormatException e) {
                 activity = 0;
-                logger.log(Level.WARNING, "Error with activity");
+                logger.warn("Error with activity", e);
             }
         }
         if (AllocineConstants.POSTER.equals(qName)) {
@@ -120,7 +119,7 @@ class DetailsHandler extends DefaultHandler {
             try {
                 mdf.setProductionYear(Long.parseLong(sb.toString()));
             } catch (NumberFormatException e) {
-                logger.log(Level.WARNING, "Error with production year");
+                logger.warn("Error with production year", e);
             }
         }
         if (AllocineConstants.NATIONALITY.equals(qName)) {
@@ -136,7 +135,7 @@ class DetailsHandler extends DefaultHandler {
             try {
                 mdf.setRuntime(Long.parseLong(sb.toString()));
             } catch (NumberFormatException e) {
-                logger.log(Level.WARNING, "Error with runtime");
+                logger.warn("Error with runtime", e);
             }
         }
         if (AllocineConstants.SYNOPSIS.equals(qName)) {
@@ -146,8 +145,7 @@ class DetailsHandler extends DefaultHandler {
             try {
                 pf.parseString(sb.toString());
             } catch (IllegalStateException e) {
-                logger.log(Level.WARNING, "Error while parsing a person name");
-                logger.log(Level.FINER, "" + e);
+                logger.warn("Error while parsing a person name", e);
             }
         }
         if (AllocineConstants.CAST_MEMBER.equals(qName)) {
@@ -162,14 +160,14 @@ class DetailsHandler extends DefaultHandler {
             try {
                 mdf.putStatistic(qName, Long.parseLong(sb.toString()));
             } catch (NumberFormatException e) {
-                logger.log(Level.WARNING, "Error with press rating");
+                logger.warn("Error with press rating", e);
             }
         }
         if (AllocineConstants.USER_RATING.equals(qName)) {
             try {
                 mdf.putStatistic(qName, Long.parseLong(sb.toString()));
             } catch (NumberFormatException e) {
-                logger.log(Level.WARNING, "Error with user rating");
+                logger.warn("Error with user rating", e);
             }
         }
     }

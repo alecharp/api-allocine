@@ -24,8 +24,6 @@
 
     <url>http://alecharp.github.com/api-allocine</url>
 
-
-
     <properties>
         <classpath-prefix>/</classpath-prefix>
         <maven.compiler.source>1.6</maven.compiler.source>
@@ -88,6 +86,11 @@
             <groupId>jaxen</groupId>
             <artifactId>jaxen</artifactId>
             <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
         </dependency>
     </dependencies>
 

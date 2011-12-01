@@ -10,11 +10,10 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.log4j.Logger;
 import org.jdom.JDOMException;
 import org.xml.sax.SAXException;
 
@@ -26,7 +25,7 @@ import org.xml.sax.SAXException;
  * @author Adrien Lecharpentier <adrien@lecharpentier.org>
  */
 public class AllocineSearchEngine extends AllocineSearch {
-	private final Logger logger = Logger.getAnonymousLogger();
+	private final Logger logger = Logger.getLogger(AllocineSearchEngine.class.getName());
 
 	/**
 	 * Search.
@@ -45,12 +44,12 @@ public class AllocineSearchEngine extends AllocineSearch {
 			try {
 				mbs = parser.parse(content);
 			} catch (ClassCastException e) {
-				logger.log(Level.SEVERE, e.getMessage());
+				logger.error(e);
 			} catch (JDOMException e) {
-				logger.log(Level.SEVERE, "You may need to report this to the developper: " + e.getMessage());
+				logger.error("You may need to report this to the developper", e);
 			}
 		} catch (IOException e) {
-			logger.log(Level.SEVERE, "You may need to report this to the developper: " + e.getMessage());
+			logger.error("You may need to report this to the developper", e);
 			throw e;
 		}
 		Collections.sort(mbs);
@@ -76,18 +75,18 @@ public class AllocineSearchEngine extends AllocineSearch {
 			try {
 				md = parser.parse(content);
 			} catch (ClassCastException e) {
-				logger.log(Level.SEVERE, e.getMessage());
+				logger.error(e);
 			} catch (ParserConfigurationException e) {
-				logger.log(Level.SEVERE, e.getMessage());
+				logger.error(e);
 			} catch (SAXException e) {
-				logger.log(Level.SEVERE, e.getMessage());
+				logger.error(e);
 			} catch (JDOMException e) {
-				logger.log(Level.SEVERE, e.getMessage());
+				logger.error(e);
 			}
 		} catch (MalformedURLException e1) {
-			logger.log(Level.SEVERE, "You may need to report this to the developper: " + e1.getMessage());
+			logger.error("You may need to report this to the developper", e1);
 		} catch (IOException e1) {
-			logger.log(Level.SEVERE, "You may need to report this to the developper: " + e1.getMessage());
+			logger.error("You may need to report this to the developper", e1);
 			throw e1;
 		}
 		return md;

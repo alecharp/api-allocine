@@ -1,9 +1,9 @@
 package org.lecharpentier.api.allocine;
 
+import org.apache.log4j.Logger;
+
 import java.io.IOException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * The Interface AllocineConnector gives methods for the communication with the
@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  * @author Adrien Lecharpentier <adrien@lecharpentier.org>
  */
 public abstract class AllocineSearch {
-	private final Logger logger = Logger.getAnonymousLogger();
+	private final Logger logger = Logger.getLogger(AllocineSearch.class.getName());
 
 	private final String searchURL;
 	private final String movieURL;
@@ -32,11 +32,10 @@ public abstract class AllocineSearch {
 	}
 
 	private AllocineSearch(int partnerNumber, String profile, String baseURL) {
-
 		this.searchURL = baseURL + "search?profile=" + profile + "&partner=" + partnerNumber + "&q=";
-		logger.log(Level.FINEST, searchURL);
+		logger.debug(searchURL);
 		this.movieURL = baseURL + "movie?profile=" + profile + "&partner=" + partnerNumber + "&code=";
-		logger.log(Level.FINEST, movieURL);
+		logger.debug(movieURL);
 	}
 
 	/**

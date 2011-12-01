@@ -5,9 +5,8 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
+import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -57,7 +56,7 @@ class BriefHandler extends DefaultHandler {
 	private final PersonFactory pf = new PersonFactory();
 	private StringBuilder sb;
 
-	private final Logger logger = Logger.getAnonymousLogger();
+	private final Logger logger = Logger.getLogger(BriefHandler.class.getName());
 
 	BriefHandler(ArrayList<MovieBrief> mbs) {
 		this.mbs = mbs;
@@ -71,7 +70,7 @@ class BriefHandler extends DefaultHandler {
 			try {
 				mbf.setFilmCode(Long.parseLong(attributes.getValue(AllocineConstants.CODE)));
 			} catch (NumberFormatException e) {
-				logger.log(Level.WARNING, "Error with film code");
+				logger.warn("Error with film code", e);
 			}
 		}
 		if (AllocineConstants.POSTER.equals(qName)) {
@@ -93,7 +92,7 @@ class BriefHandler extends DefaultHandler {
 					mbf.addDirector(pf.validate());
 				}
 			} catch (NumberFormatException e) {
-				logger.log(Level.WARNING, "Error with person type");
+				logger.warn("Error with person type", e);
 			}
 		}
 	}
@@ -115,7 +114,7 @@ class BriefHandler extends DefaultHandler {
 			try {
 				mbf.setProductionYear(Long.parseLong(sb.toString()));
 			} catch (NumberFormatException e) {
-				logger.log(Level.WARNING, "Error with production year");
+				logger.warn("Error with production year", e);
 			}
 		}
 		if (AllocineConstants.RELEASE_DATE.equals(qName)) {
@@ -128,8 +127,7 @@ class BriefHandler extends DefaultHandler {
                     pf.parseString(s.toString().trim());
                     mbf.addDirector(pf.validate());
                 } catch (IllegalStateException e) {
-                    logger.log(Level.WARNING, "Error while parsing a person name");
-                    logger.log(Level.FINER, "" + e);
+                    logger.warn("Error while parsing a person name", e);
                 }
             }
         }
@@ -140,8 +138,7 @@ class BriefHandler extends DefaultHandler {
                     pf.parseString(s.toString().trim());
                     mbf.addActor(pf.validate());
                 } catch (IllegalStateException e) {
-                    logger.log(Level.WARNING, "Error while parsing a person name");
-                    logger.log(Level.FINER, "" + e);
+                    logger.warn("Error while parsing a person name", e);
                 }
             }
         }
@@ -149,14 +146,14 @@ class BriefHandler extends DefaultHandler {
 			try {
 				mbf.setPressRating(Long.parseLong(sb.toString()));
 			} catch (NumberFormatException e) {
-				logger.log(Level.WARNING, "Error with press rating");
+				logger.warn("Error with press rating", e);
 			}
 		}
 		if (AllocineConstants.USER_RATING.equals(qName)) {
 			try {
 				mbf.setUsersRating(Long.parseLong(sb.toString()));
 			} catch (NumberFormatException e) {
-				logger.log(Level.WARNING, "Error with user rating");
+				logger.warn("Error with user rating", e);
 			}
 		}
 		if (AllocineConstants.MOVIE.equals(qName)) {

@@ -1,13 +1,13 @@
 package org.lecharpentier.api.allocine;
 
+import org.apache.log4j.Logger;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * The Class MovieBrief contains the basic information about a film. It
@@ -189,7 +189,7 @@ public final class MovieBrief implements Comparable<MovieBrief> {
 	}
 
 	static class MovieBriefFactory {
-		private final Logger logger = Logger.getAnonymousLogger();
+		private final Logger logger = Logger.getLogger(MovieBriefFactory.class.getName());
 		private MovieBrief mb = null;
 
 		/**
@@ -229,7 +229,7 @@ public final class MovieBrief implements Comparable<MovieBrief> {
 		/**
 		 * Sets the poster url.
 		 * 
-		 * @param imgUrl
+		 * @param poster
 		 *            the new img url
 		 */
 		public void setPoster(String poster) {
@@ -284,7 +284,7 @@ public final class MovieBrief implements Comparable<MovieBrief> {
 				Date d = sdf.parse(dateString);
 				mb.setReleaseDate(d);
 			} catch (ParseException e) {
-				logger.log(Level.FINER, e.getMessage());
+				logger.warn(e);
 			}
 		}
 
