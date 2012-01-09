@@ -84,7 +84,7 @@ public final class SearchEngine {
     public Movie movie(int code) throws HTTPException, IOException {
         HttpClient client = new HttpClient();
         HttpMethod meth = new GetMethod(BASE_URL + "movie?" + PARTNER + "&" + FORMAT +
-                "&code=" + code);
+                "&code=" + code + "&profile=large");
 
         client.executeMethod(meth);
         if (meth.getStatusCode() != HttpStatus.SC_OK) {
@@ -102,7 +102,7 @@ public final class SearchEngine {
         if (meth.getStatusCode() != HttpStatus.SC_OK) {
             throw new IllegalStateException("The HTTP request went bad..");
         }
-        return mapper.readValue(meth.getResponseBodyAsStream(), RootTVSerie.class).getTVSerie();
+        return mapper.readValue(meth.getResponseBodyAsStream(), RootTVSerie.class).getTVSeries();
     }
 
     public TVSerie.Season season(int code) throws HTTPException, IOException {

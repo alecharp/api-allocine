@@ -3,7 +3,7 @@ package org.lecharpentier.api.allocine;
 class RootTVSerie {
     private TVSerie tvseries;
 
-    public TVSerie getTVSerie() {
+    public TVSerie getTVSeries() {
         return tvseries;
     }
 }
